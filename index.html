@@ -77,6 +77,20 @@ tr.strong td { font-weight: 600 }
 th.camp { box-shadow: inset 0 -2px 0 var(--campus) }
 .notes { color: var(--muted); font-size: 14px; display: grid; gap: 6px; max-width: 80ch }
 .notes p { margin: 0 }
+/* marché */
+.market { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 6px }
+.mk { padding: 18px; display: grid; gap: 6px; align-content: start; min-width: 0 }
+.mk + .mk { border-left: 1px solid var(--line) }
+.mk .v { font: 500 28px/1.1 var(--mono); color: var(--online) }
+.mk .v small { font-size: 14px; color: var(--muted) }
+.mk .l { font-size: 14px }
+.mk a { font-size: 12px; color: var(--muted); text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere }
+.mk a:hover { color: var(--ink) }
+.compare { font-size: 15px; color: var(--muted); max-width: 72ch; margin: 0 }
+.compare b { color: var(--ink) }
+@media (max-width: 860px) { .market { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .mk:nth-child(3) { border-left: 0 } .mk:nth-child(n+3) { border-top: 1px solid var(--line) } }
+@media (max-width: 480px) { .market { grid-template-columns: 1fr } .mk + .mk { border-left: 0; border-top: 1px solid var(--line) } }
 footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px }
 </style>
 
@@ -120,6 +134,23 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
   </section>
 
   <section>
+    <div class="sec-head"><div><h2>Un marché en forte croissance</h2>
+      <p>Croissance annuelle moyenne attendue de la formation en ligne, selon les études de marché récentes.</p></div></div>
+    <div class="market">
+      <div class="mk"><span class="v">+23,2 % <small>/an</small></span><span class="l">Formation en ligne en entreprise, Moyen-Orient &amp; Afrique, 2025-2030</span>
+        <a href="https://www.grandviewresearch.com/horizon/outlook/corporate-e-learning-market/mea" target="_blank" rel="noopener">Grand View Research</a></div>
+      <div class="mk"><span class="v">+14,5 % <small>/an</small></span><span class="l">Services de formation en ligne, Moyen-Orient &amp; Afrique, 2025-2030</span>
+        <a href="https://www.grandviewresearch.com/horizon/outlook/e-learning-services-market/mea" target="_blank" rel="noopener">Grand View Research</a></div>
+      <div class="mk"><span class="v">+12,9 % <small>/an</small></span><span class="l">Formation en ligne en entreprise, monde, 2026-2031</span>
+        <a href="https://www.mordorintelligence.com/industry-reports/corporate-e-learning-market" target="_blank" rel="noopener">Mordor Intelligence</a></div>
+      <div class="mk"><span class="v">92 %</span><span class="l">des Marocains en ligne début 2025. Digital Morocco 2030 vise 100 000 talents numériques formés par an, dont 50 000 en reconversion</span>
+        <a href="https://datareportal.com/reports/digital-2025-morocco" target="_blank" rel="noopener">DataReportal</a>
+        <a href="https://fr.hespress.com/387500-digital-morocco-2030-100-milliards-de-dirhams-et-240-000-emplois-pour-dynamiser-leconomie-numerique.html" target="_blank" rel="noopener">Hespress</a></div>
+    </div>
+    <p class="compare">À partir de 2030-31, la projection HEC (<b>+15 %/an</b>) suit le rythme du marché. Avant, elle le dépasse (+40 % → +20 %) : HEC gagne des parts de marché, comme sur ses deux derniers exercices (<b>+37 %</b> puis <b>+80 %</b>). Le scénario prudent (+15 % → +8 %) se situe au bas de la fourchette mondiale.</p>
+  </section>
+
+  <section>
     <div class="sec-head"><div><h2>Capacité de financement du campus</h2>
       <p>Cash généré chaque année (résultat net + amortissements), avant tout loyer ou investissement campus, dont le montage reste à décider.</p></div></div>
     <div class="chart">
@@ -140,7 +171,7 @@ footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line)
     <div class="notes">
       <p><b>Historique.</b> Balances générales 2023 (01/01 → 31/08, exercice de 8 mois), 2023-24 et 2024-25. Liasse provisoire 2025-26 au 15/10/2026, non arrêtée : amortissements (0,6 % du CA) et IS (20 %) y sont estimés.</p>
       <p><b>Répartition 2025-26.</b> Formation initiale supposée stable à 7,0 M, le reste en formation continue. À remplacer par le chiffre réel.</p>
-      <p><b>Formation en ligne.</b> Central : +40 %, +30 %, +25 %, +20 %, puis +15 %/an. Prudent : +15 %, +12 %, puis +10 % → +8 %/an. Pour référence : +37 % et +80 % sur les deux derniers exercices.</p>
+      <p><b>Formation en ligne.</b> Central : +40 %, +30 %, +25 %, +20 %, puis +15 %/an. Prudent : +15 %, +12 %, puis +10 % → +8 %/an. Pour référence : +37 % et +80 % sur les deux derniers exercices ; marché de +12,9 % (monde) à +23,2 %/an (Moyen-Orient &amp; Afrique, formation en entreprise).</p>
       <p><b>Formation initiale.</b> +4 %/an de hausse des frais. À partir de 2029-30, le nouveau campus multiplie la capacité d'accueil par 3 à 4 (capacité exacte après étude) : ×4 en scénario central, ×3 en prudent. La montée en charge est linéaire sur 5 ans, donc la capacité est pleine en 2033-34.</p>
       <p><b>Rentabilité.</b> Marge EBITDA de 22 % à 28 % en 2033-34, personnel ramené de 49 % à 45 % du CA. Aucun loyer, investissement ni financement lié au campus n'est intégré.</p>
       <p><b>Apprenants équivalents.</b> CA divisé par le prix moyen global de 35 000 MAD : environ 670 en 2025-26.</p>
