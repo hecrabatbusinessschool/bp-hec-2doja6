@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<title>HEC Rabat — Plan 2026-2034</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : colonne éditoriale de 1080px — thèse, chiffres clés, deux graphiques, tableau, méthode */
+:root {
+  --bg: #F7F8FA; --surface: #FFFFFF; --ink: #14213D; --muted: #5B6478; --line: #DDE1E8;
+  --init: #2F4B8F; --online: #0E8A6A; --campus: #B5832A; --tint: #EEF1F7;
+  --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0F1522; --surface: #161E2E; --ink: #E8ECF3; --muted: #9AA4B8; --line: #2A3448;
+  --init: #7C9BE6; --online: #3CC79F; --campus: #E0B25C; --tint: #1C2638; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0F1522; --surface: #161E2E; --ink: #E8ECF3; --muted: #9AA4B8; --line: #2A3448;
+  --init: #7C9BE6; --online: #3CC79F; --campus: #E0B25C; --tint: #1C2638; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--body); margin: 0 }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 48px }
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em }
+h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.08; font-weight: 800; max-width: 22ch }
+h2 { font-size: 22px; font-weight: 700 }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted) }
+.lede { max-width: 64ch; color: var(--muted); font-size: 17px; margin: 0 }
+header { display: grid; gap: 16px }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums }
+/* KPI */
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line) }
+.kpi { padding: 18px 18px 20px 0; display: grid; gap: 6px; align-content: start }
+.kpi + .kpi { padding-left: 18px; border-left: 1px solid var(--line) }
+.kpi .v { font: 500 30px/1.1 var(--mono); font-variant-numeric: tabular-nums }
+.kpi .v small { font-size: 15px; color: var(--muted) }
+.kpi .l { font-size: 14px; color: var(--muted) }
+.kpi .d { font: 500 13px/1.3 var(--mono); color: var(--online) }
+@media (max-width: 760px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .kpi:nth-child(3) { padding-left: 0; border-left: 0 } .kpi:nth-child(n+3) { border-top: 1px solid var(--line) } }
+/* sections */
+section { display: grid; gap: 18px }
+.sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px }
+.sec-head p { margin: 4px 0 0; color: var(--muted); max-width: 60ch }
+.toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--surface) }
+.toggle button { font: 500 13px var(--body); color: var(--muted); background: none; border: 0; border-radius: 999px; padding: 7px 14px; cursor: pointer }
+.toggle button[aria-pressed="true"] { background: var(--ink); color: var(--bg) }
+.toggle button:focus-visible { outline: 2px solid var(--campus); outline-offset: 2px }
+.chart { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px; min-width: 0 }
+.chart-box { position: relative; height: 360px }
+@media (max-width: 560px) { .chart-box { height: 280px } }
+.legend { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; color: var(--muted); margin-top: 10px }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px }
+/* thèse */
+.thesis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px }
+.thesis div { display: grid; gap: 8px; align-content: start; border-top: 1px solid var(--line); padding-top: 14px }
+.thesis h3 { font: 700 17px/1.3 var(--display); margin: 0 }
+.thesis p { margin: 0; color: var(--muted); font-size: 15px }
+.thesis .tag { font: 500 12px var(--mono); letter-spacing: .08em; text-transform: uppercase }
+@media (max-width: 760px) { .thesis { grid-template-columns: 1fr } }
+/* table */
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface) }
+table { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 14px }
+th, td { padding: 9px 12px; text-align: right; white-space: nowrap; font-family: var(--mono); font-variant-numeric: tabular-nums }
+th:first-child, td:first-child { text-align: left; font-family: var(--body); position: sticky; left: 0; background: var(--surface) }
+thead th { font: 500 12px var(--mono); color: var(--muted); border-bottom: 1px solid var(--line) }
+thead th.p { color: var(--ink) }
+tbody tr + tr td { border-top: 1px solid var(--line) }
+td.h, th.h { background: var(--tint) }
+tr.strong td { font-weight: 600 }
+th.camp { box-shadow: inset 0 -2px 0 var(--campus) }
+.notes { color: var(--muted); font-size: 14px; display: grid; gap: 6px; max-width: 80ch }
+.notes p { margin: 0 }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">HEC Rabat · Business plan 2026-27 → 2033-34 · en MAD</span>
+    <h1>Une croissance portée par le digital, un campus pour libérer la formation initiale</h1>
+    <p class="lede">En trois exercices, HEC a presque doublé son chiffre d'affaires et multiplié sa marge par deux, sans s'endetter. La formation continue en ligne n'a pas de limite physique. La formation initiale, elle, plafonne dans les locaux actuels.</p>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <section>
+    <div class="sec-head">
+      <div><h2>Chiffre d'affaires par activité</h2>
+        <p>Historique 2023-24 → 2025-26 (provisoire), puis projection. Le campus ouvre en 2029-30.</p></div>
+      <div class="toggle" role="group" aria-label="Scénario">
+        <button type="button" id="b-central" aria-pressed="true">Central</button>
+        <button type="button" id="b-prudent" aria-pressed="false">Prudent</button>
+      </div>
+    </div>
+    <div class="chart">
+      <div class="chart-box"><canvas id="c-ca" aria-label="Chiffre d'affaires par activité"></canvas></div>
+      <div class="legend"><span><i style="background:var(--init)"></i>Formation initiale (campus)</span>
+        <span><i style="background:var(--online)"></i>Formation continue en ligne</span>
+        <span><i style="background:var(--campus)"></i>Ouverture du campus</span>
+        <span>Barres pâles = projection</span></div>
+    </div>
+  </section>
+
+  <section class="thesis">
+    <div><span class="tag" style="color:var(--online)">Moteur digital</span>
+      <h3>La formation en ligne finance la croissance</h3>
+      <p id="t1"></p></div>
+    <div><span class="tag" style="color:var(--init)">Saturation physique</span>
+      <h3>La formation initiale plafonne</h3>
+      <p>Autour de 7 M depuis 2024-25 : les salles de Rabat sont pleines. Sans nouvel espace, elle ne progresse plus que par les prix (+4 %/an).</p></div>
+    <div><span class="tag" style="color:var(--campus)">Le campus</span>
+      <h3>Doubler la capacité d'accueil</h3>
+      <p id="t3"></p></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div><h2>Capacité de financement du campus</h2>
+      <p>Cash généré chaque année (résultat net + amortissements), avant tout loyer ou investissement campus, dont le montage reste à décider.</p></div></div>
+    <div class="chart">
+      <div class="chart-box"><canvas id="c-caf" aria-label="Capacité d'autofinancement annuelle et cumulée"></canvas></div>
+      <div class="legend"><span><i style="background:var(--ink)"></i>CAF annuelle</span>
+        <span><i style="background:var(--campus)"></i>CAF cumulée depuis 2026-27</span>
+        <span><i style="background:var(--online)"></i>Marge EBITDA (axe droit)</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div><h2>Chiffres clés par exercice</h2><p id="tbl-sub">En millions de MAD. Colonnes grisées = historique.</p></div></div>
+    <div class="tbl"><table id="tbl"></table></div>
+  </section>
+
+  <section>
+    <h2>Méthode et hypothèses</h2>
+    <div class="notes">
+      <p><b>Historique.</b> Balances générales 2023 (01/01 → 31/08, exercice de 8 mois), 2023-24 et 2024-25. Liasse provisoire 2025-26 au 15/10/2026, non arrêtée : amortissements (0,6 % du CA) et IS (20 %) y sont estimés.</p>
+      <p><b>Répartition 2025-26.</b> Formation initiale supposée stable à 7,0 M, le reste en formation continue. À remplacer par le chiffre réel.</p>
+      <p><b>Formation en ligne.</b> Central : +40 %, +30 %, +25 %, +20 %, puis +15 %/an. Prudent : +15 %, +12 %, puis +10 % → +8 %/an. Pour référence : +37 % et +80 % sur les deux derniers exercices.</p>
+      <p><b>Formation initiale.</b> +4 %/an de hausse des frais. À partir de 2029-30, capacité ×2 atteinte en trois ans (×1,33, ×1,67, ×2).</p>
+      <p><b>Rentabilité.</b> Marge EBITDA de 22 % à 28 % en 2033-34, personnel ramené de 49 % à 45 % du CA. Aucun loyer, investissement ni financement lié au campus n'est intégré.</p>
+      <p><b>Apprenants équivalents.</b> CA divisé par le prix moyen global de 35 000 MAD : environ 670 en 2025-26.</p>
+    </div>
+  </section>
+
+  <footer>Modèle complet et modifiable : BP_HEC_2026-2034.xlsx (onglets Hypothèses, Historique, Projection, Synthèse). Document de travail, octobre 2026.</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const D = {"hist": [{"year": "2023 (8m)", "init": 2113695.15, "online": 4666039.84, "ca": 6779734.99, "ebitda": 797467.540000001, "rn": 391496.1900000009, "caf": 434130.86000000086, "treso": 750626.07, "dette": 1091399.22}, {"year": "2023-24", "init": 5976638.21, "online": 6608515.92, "ca": 12585154.129999999, "ebitda": 1275063.4299999997, "rn": 541937.1899999997, "caf": 633512.9899999998, "treso": 505538.79, "dette": 696952.4199999999}, {"year": "2024-25", "init": 6993205.24, "online": 9149156.52, "ca": 16142361.76, "ebitda": 2074017.3500000015, "rn": 1101324.2000000014, "caf": 1220666.2700000014, "treso": 1497159.84, "dette": 338167.57}, {"year": "2025-26P", "init": 7000000, "online": 16441042.52, "ca": 23441042.52, "ebitda": 5235966.489999998, "rn": 3826227.8519039988, "caf": 3966874.1070239986, "treso": 6575186.6, "dette": 121023.17}], "central": [{"year": "2026-27", "init": 7280000.0, "online": 23017459.527999997, "ca": 30297459.527999997, "ebitda": 6892672.0426199995, "marge": 0.2275, "rn": 5368709.8283616, "caf": 5550494.585529599, "cum": 5550494.585529599, "treso": 12125681.185529599}, {"year": "2027-28", "init": 7571200.000000001, "online": 29922697.386399996, "ca": 37493897.3864, "ebitda": 8811065.885804001, "marge": 0.23500000000000001, "rn": 6868882.001188481, "caf": 7093845.385506881, "cum": 12644339.97103648, "treso": 19219526.57103648}, {"year": "2028-29", "init": 7874048.000000001, "online": 37403371.732999995, "ca": 45277419.732999995, "ebitda": 10979774.2852525, "marge": 0.24250000000000002, "rn": 8566487.8134836, "caf": 8838152.3318816, "cum": 21482492.30291808, "treso": 28057678.902918078}, {"year": "2029-30", "init": 10918679.893333334, "online": 44884046.07959999, "ca": 55802725.97293332, "ebitda": 13950681.49323333, "marge": 0.25, "rn": 10892692.109916585, "caf": 11227508.465754185, "cum": 32710000.768672265, "treso": 39285187.36867227}, {"year": "2030-31", "init": 14194283.861333333, "online": 51616652.991539985, "ca": 65810936.85287332, "ebitda": 16946316.23961488, "marge": 0.2575, "rn": 13241160.494798113, "caf": 13636026.115915352, "cum": 46346026.884587616, "treso": 52921213.48458762}, {"year": "2031-32", "init": 17714466.258944005, "online": 59359150.940270975, "ca": 77073617.19921498, "ebitda": 20424508.55779197, "marge": 0.265, "rn": 15969653.483677346, "caf": 16432095.186872637, "cum": 62778122.071460254, "treso": 69353308.67146026}, {"year": "2032-33", "init": 18423044.909301765, "online": 68263023.58131161, "ca": 86686068.49061337, "ebitda": 23621953.663692147, "marge": 0.2725, "rn": 18481469.802198775, "caf": 19001586.213142455, "cum": 81779708.2846027, "treso": 88354894.88460271}, {"year": "2033-34", "init": 19159966.705673832, "online": 78502477.11850835, "ca": 97662443.82418218, "ebitda": 27345484.270771015, "marge": 0.28, "rn": 21407607.686260737, "caf": 21993582.34920583, "cum": 103773290.63380852, "treso": 110348477.23380855}], "prudent": [{"year": "2026-27", "init": 7280000.0, "online": 18907198.898, "ca": 26187198.898, "ebitda": 5957587.749295, "marge": 0.2275, "rn": 4640371.6447256, "caf": 4797494.8381136, "cum": 4797494.8381136, "treso": 11372681.4381136}, {"year": "2027-28", "init": 7571200.000000001, "online": 21176062.76576, "ca": 28747262.76576, "ebitda": 6755606.749953601, "marge": 0.23500000000000001, "rn": 5266498.538687232, "caf": 5438982.115281792, "cum": 10236476.953395393, "treso": 16811663.55339539}, {"year": "2028-29", "init": 7874048.000000001, "online": 23293669.042336002, "ca": 31167717.042336002, "ebitda": 7558171.3827664815, "marge": 0.24250000000000002, "rn": 5896932.064409973, "caf": 6083938.366663989, "cum": 16320415.320059381, "treso": 22895601.92005938}, {"year": "2029-30", "init": 10918679.893333334, "online": 25623035.946569603, "ca": 36541715.83990294, "ebitda": 9135428.959975734, "marge": 0.25, "rn": 7132942.931949054, "caf": 7352193.226988471, "cum": 23672608.547047853, "treso": 30247795.14704785}, {"year": "2030-31", "init": 14194283.861333333, "online": 28185339.541226566, "ca": 42379623.4025599, "ebitda": 10912753.026159175, "marge": 0.2575, "rn": 8526780.228595052, "caf": 8781057.96901041, "cum": 32453666.516058266, "treso": 39028853.11605826}, {"year": "2031-32", "init": 17714466.258944005, "online": 30440166.704524692, "ca": 48154632.9634687, "ebitda": 12760977.735319206, "marge": 0.265, "rn": 9977639.950030716, "caf": 10266567.747811528, "cum": 42720234.26386979, "treso": 49295420.863869786}, {"year": "2032-33", "init": 18423044.909301765, "online": 32875380.04088667, "ca": 51298424.950188436, "ebitda": 13978820.79892635, "marge": 0.2725, "rn": 10936824.199380176, "caf": 11244614.749081306, "cum": 53964849.0129511, "treso": 60540035.61295109}, {"year": "2033-34", "init": 19159966.705673832, "online": 35505410.44415761, "ca": 54665377.149831444, "ebitda": 15306305.601952806, "marge": 0.28, "rn": 11982650.671243053, "caf": 12310642.934142042, "cum": 66275491.947093144, "treso": 72850678.54709314}], "hyp": {"scenario": 1, "prix": 35000, "g_prix": 0.04, "campus": "2029-30", "cap": 2.0, "r1": 0.3333333333333333, "r2": 0.6666666666666666, "r3": 1.0, "eb0": 0.22, "eb1": 0.28, "p0": 0.49, "p1": 0.45, "taux_is": 0.2, "dot": 0.006, "base_init": 7000000}, "g_central": [0.4, 0.3, 0.25, 0.2, 0.15, 0.15, 0.15, 0.15], "g_prudent": [0.15, 0.12, 0.1, 0.1, 0.1, 0.08, 0.08, 0.08]};
+const M = v => v / 1e6;
+const fmt = (v, d = 1) => M(v).toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d });
+const pct = v => (v * 100).toLocaleString('fr-FR', { maximumFractionDigits: 0 }) + ' %';
+const H = D.hist.slice(1); // 2023 (8m) exclu des graphiques
+let scen = 'central', charts = [];
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const alpha = (hex, a) => { const h = hex.replace('#', ''); const n = parseInt(h, 16);
+  return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${a})`; };
+const label = y => y === '2025-26P' ? '2025-26 P' : y;
+
+function kpis() {
+  const P = D[scen], last = P[P.length - 1], h0 = D.hist[1], h = D.hist[3];
+  const items = [
+    [fmt(h.ca), 'M', 'CA 2025-26 (provisoire)', '×' + (h.ca / h0.ca).toLocaleString('fr-FR', { maximumFractionDigits: 1 }) + ' vs 2023-24'],
+    [pct(h.ebitda / h.ca), '', 'Marge EBITDA 2025-26', 'contre ' + pct(h0.ebitda / h0.ca) + ' en 2023-24'],
+    [fmt(h.treso), 'M', 'Trésorerie fin 2025-26', 'dette résiduelle ' + fmt(h.dette, 2) + ' M'],
+    [fmt(last.ca), 'M', 'CA projeté 2033-34', (scen === 'central' ? 'scénario central' : 'scénario prudent') + ', ×' + (last.ca / h.ca).toLocaleString('fr-FR', { maximumFractionDigits: 1 })],
+  ];
+  document.getElementById('kpis').innerHTML = items.map(([v, u, l, d]) =>
+    `<div class="kpi"><span class="v">${v}${u ? ' <small>' + u + '</small>' : ''}</span><span class="l">${l}</span><span class="d">${d}</span></div>`).join('');
+  const k = P.findIndex(r => r.year === D.hyp.campus);
+  document.getElementById('t1').textContent =
+    `De ${fmt(D.hist[1].online)} M en 2023-24 à ${fmt(h.online)} M en 2025-26, puis ${fmt(last.online)} M en 2033-34 (${scen}). 100 % en ligne : aucune contrainte de locaux.`;
+  document.getElementById('t3').textContent =
+    `De ${fmt(P[k - 1].init)} M avant ouverture à ${fmt(last.init)} M en 2033-34. Sur 8 ans, HEC dégage ${fmt(last.cum, 0)} M de capacité de financement cumulée, dont ${fmt(P[k].caf)} M dès l'année d'ouverture.`;
+}
+
+const campusLine = { id: 'campus', afterDatasetsDraw(c) {
+  const x = c.scales.x, i = x.getLabels().indexOf(D.hyp.campus); if (i < 0) return;
+  const px = (x.getPixelForValue(i) + x.getPixelForValue(i - 1)) / 2, ctx = c.ctx, top = c.chartArea.top;
+  ctx.save(); ctx.strokeStyle = css('--campus'); ctx.setLineDash([4, 4]); ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(px, top); ctx.lineTo(px, c.chartArea.bottom); ctx.stroke();
+  ctx.setLineDash([]); ctx.fillStyle = css('--campus'); ctx.font = '500 12px "IBM Plex Mono", monospace';
+  ctx.fillText('Campus', px + 6, top + 12); ctx.restore(); } };
+
+function draw() {
+  charts.forEach(c => c.destroy()); charts = [];
+  const P = D[scen], ink = css('--ink'), muted = css('--muted'), line = css('--line');
+  const labels = [...H.map(r => r.year), ...P.map(r => r.year)];
+  const nH = H.length, fade = (col) => labels.map((_, i) => i < nH ? col : alpha(col, .55));
+  Chart.defaults.font.family = '"IBM Plex Sans", Arial, sans-serif'; Chart.defaults.color = muted;
+  const axes = (y2) => ({
+    x: { stacked: true, grid: { display: false }, ticks: { color: muted, callback: (v, i) => label(labels[i]), maxRotation: 0, autoSkip: true } },
+    y: { stacked: true, grid: { color: line }, border: { display: false }, ticks: { color: muted, callback: v => M(v).toLocaleString('fr-FR') + ' M' } },
+    ...(y2 ? { y2: { position: 'right', min: 0, max: .35, grid: { display: false }, border: { display: false }, ticks: { color: muted, callback: v => pct(v) } } } : {}) });
+  const tip = { callbacks: { title: it => label(it[0].label), label: c => ` ${c.dataset.label} : ${c.dataset.yAxisID === 'y2' ? pct(c.raw) : fmt(c.raw) + ' M'}` } };
+  const init = css('--init'), onl = css('--online'), camp = css('--campus');
+  charts.push(new Chart(document.getElementById('c-ca'), { type: 'bar', plugins: [campusLine],
+    data: { labels, datasets: [
+      { label: 'Formation initiale', data: [...H.map(r => r.init), ...P.map(r => r.init)], backgroundColor: fade(init), borderRadius: 2 },
+      { label: 'Formation en ligne', data: [...H.map(r => r.online), ...P.map(r => r.online)], backgroundColor: fade(onl), borderRadius: 2 } ] },
+    options: { maintainAspectRatio: false, animation: false, plugins: { legend: { display: false }, tooltip: tip }, scales: axes(false) } }));
+  charts.push(new Chart(document.getElementById('c-caf'), { plugins: [campusLine],
+    data: { labels, datasets: [
+      { type: 'bar', label: 'CAF annuelle', data: [...H.map(r => r.caf), ...P.map(r => r.caf)], backgroundColor: fade(ink), borderRadius: 2, order: 2 },
+      { type: 'line', label: 'CAF cumulée', data: [...H.map(() => null), ...P.map(r => r.cum)], borderColor: camp, backgroundColor: camp, pointRadius: 3, tension: .25, order: 1 },
+      { type: 'line', label: 'Marge EBITDA', yAxisID: 'y2', data: [...H.map(r => r.ebitda / r.ca), ...P.map(r => r.marge)], borderColor: onl, backgroundColor: onl, borderDash: [5, 4], pointRadius: 2, order: 0 } ] },
+    options: { maintainAspectRatio: false, animation: false, plugins: { legend: { display: false }, tooltip: tip },
+      scales: { ...axes(true), x: { ...axes(true).x, stacked: false }, y: { ...axes(true).y, stacked: false } } } }));
+}
+
+function table() {
+  const P = D[scen], all = [...D.hist.map(r => ({ ...r, h: 1, marge: r.ebitda / r.ca })), ...P];
+  const rows = [
+    ['Formation initiale', r => fmt(r.init)], ['Formation en ligne', r => fmt(r.online)],
+    ['Chiffre d\'affaires', r => fmt(r.ca), 1], ['EBITDA', r => fmt(r.ebitda)], ['Marge EBITDA', r => pct(r.marge)],
+    ['Résultat net', r => fmt(r.rn), 1], ['Capacité de financement (CAF)', r => fmt(r.caf), 1], ['Trésorerie fin d\'exercice', r => r.treso != null ? fmt(r.treso) : '–'] ];
+  const head = '<thead><tr><th></th>' + all.map(r => `<th class="${r.h ? 'h' : 'p'}${r.year === D.hyp.campus ? ' camp' : ''}">${r.year === '2023 (8m)' ? '2023 (8 mois)' : label(r.year)}</th>`).join('') + '</tr></thead>';
+  const body = '<tbody>' + rows.map(([l, f, s]) => `<tr class="${s ? 'strong' : ''}"><td>${l}</td>` + all.map(r => `<td class="${r.h ? 'h' : ''}">${f(r)}</td>`).join('') + '</tr>').join('') + '</tbody>';
+  document.getElementById('tbl').innerHTML = head + body;
+  document.getElementById('tbl-sub').textContent = `En millions de MAD. Colonnes grisées = historique. Scénario ${scen}. Trésorerie projetée avant campus, dividendes et BFR.`;
+}
+
+function render() { kpis(); draw(); table(); }
+['central', 'prudent'].forEach(s => document.getElementById('b-' + s).addEventListener('click', () => {
+  scen = s; document.querySelectorAll('.toggle button').forEach(b => b.setAttribute('aria-pressed', b.id === 'b-' + s)); render(); }));
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+render();
+</script>
+
+</body>
+</html>
